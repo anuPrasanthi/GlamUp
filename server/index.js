@@ -15,5 +15,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 app.use('/api', stockRouter)
+// var publicDir = require('path').join(__dirname,'/public');
+// app.use(express.static(publicDir));
 app.use('/public', express.static('public'));
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

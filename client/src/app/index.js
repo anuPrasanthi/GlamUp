@@ -13,7 +13,7 @@ function App() {
             <Switch>
                 <Route exact path='/' component={ImageSlider} />
                 <Route path='/create/stock' component={CreateStock} />
-                <Route path='/in/woman' component={WomanStock} />
+                <Route path='/in/woman-studio' component={WomanStock} />
                 <Route path='/in/man' component={MenStock} />
             </Switch>
         </Router>

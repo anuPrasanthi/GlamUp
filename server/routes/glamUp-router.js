@@ -8,7 +8,6 @@ let imageStorage = './public/';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        console.log("comingg");
         cb(null, imageStorage);
     },
     filename: (req, file, cb) => {
@@ -20,7 +19,6 @@ var upload = multer({
     storage: storage,
     limits: { fieldSize: 25 * 1024 * 1024 },
     fileFilter: (req, file, cb) => {
-        console.log('--comingg--')
         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
             cb(null, true);
         } else {
@@ -69,19 +67,23 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
             error: err
         })
     }
-    stock.save().then(result => {
-        return res.status(201).json({
-            success: true,
-            id: result._id,
-            category: result.category,
-            gender: result.gender,
-            item_name: result.item_name,
-            price: result.price,
-            // sizes: result.sizes,
-            colors: result.colors,
-            imgCollection: result.imgCollection,
+    stock.save().then((result) => {
+        // return res.status(201).json({
+        //     success: true,
+        //     id: result._id,
+        //     category: result.category,
+        //     gender: result.gender,
+        //     item_name: result.item_name,
+        //     price: result.price,
+        //     // sizes: result.sizes,
+        //     colors: result.colors,
+        //     imgCollection: result.imgCollection,
+        //     message: 'Stock Created!',
+        // })
+        //return res.redirect('/');
+        return res.redirect('/allWomenStock').status(201).json({
             message: 'Stock Created!',
-        })
+        });
     }).catch(error => {
         return res.status(400).json({
             error,
@@ -90,6 +92,6 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
     })
 
 })
-router.get('/allStock', GlamUpCtrl.getAllStock)
+router.get('/allWomenStock', GlamUpCtrl.getAllWomenStock)
 
 module.exports = router

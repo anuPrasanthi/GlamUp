@@ -81,7 +81,7 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
         //     message: 'Stock Created!',
         // })
         //return res.redirect('/');
-        return res.redirect('/allWomenStock').status(201).json({
+        return res.redirect('/').status(201).json({
             message: 'Stock Created!',
         });
     }).catch(error => {
@@ -93,5 +93,5 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
 
 })
 router.get('/allWomenStock', GlamUpCtrl.getAllWomenStock)
-
+router.get('/allMenStock', GlamUpCtrl.getAllMenStock)
 module.exports = router

@@ -36,7 +36,7 @@ class WomanStock extends Component {
       <div className="Container-fluid row col-xs-12">
         {imgCollection.map((imgCollection, i) => {
           return (
-            <div key={i}>
+            <div className='img' key={i}>
               <div id='card'>
                 <img src={imgCollection.imgCollection} className='imgPreview' alt="WomenStock" />
               </div>

@@ -1,5 +1,10 @@
+
 img{
     width: 150px;
     height: 150px;
-    margin: 25px 25px;
+    border-radius: 10px;
+   
 }
+/* .img{
+    margin: 0 25px 25px 0;
+} */

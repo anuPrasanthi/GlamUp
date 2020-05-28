@@ -43,7 +43,7 @@ class ImageSlider extends React.Component {
               </div>
                 {/* <button className='btn btn-default' onClick={() => history.push('/in/woman')}>View</button> */}
                 {/* <Link to='/in/woman'>View</Link> */}
-                <ViewButton href={'/in/woman'}>View</ViewButton>
+                <ViewButton href={'/woman-studio'}>View</ViewButton>
               </span>
             </div>
           </div>
@@ -54,7 +54,7 @@ class ImageSlider extends React.Component {
                 season curated for you.<br />
                 Spring Summer Man Collection
               </div>
-              <ViewButton href={'/in/man'}>View</ViewButton>
+              <ViewButton href={'/men-studio'}>View</ViewButton>
               </span>
             </div>
           </div>

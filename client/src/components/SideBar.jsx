@@ -27,8 +27,8 @@ class SideBar extends React.Component {
                 sidebar={
                     <b>
                         <ul className='sideBarList'>
-                            <li><a href={'in/woman-studio'}>WOMAN</a></li>
-                            <li>MAN</li>
+                            <li><a href={'woman-studio'}>WOMAN</a></li>
+                            <li><a href={'men-studio'}>MAN</a></li>
                             <li>KIDS</li>
                             <li className='sideBarInfo'><a href='#'>+ INFO</a>
                             <ul><li>Create</li>

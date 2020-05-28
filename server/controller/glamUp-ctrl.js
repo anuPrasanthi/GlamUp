@@ -64,8 +64,28 @@ const GlamUp = require('../models/glamUp-model')
 // }
 getAllWomenStock = async (req, res) => {
     await GlamUp.find({gender:'Female'}, (err, stock) => {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                error: err,
+            })
+        }
+        if (!stock.length) {
+            return res.status(404).json({
+                success: false,
+                error: `Stock not found`,
+            })
+        }
         
-        console.log('=====COMINGGGGGGGGGGGGGGGGGGG=====')
+        return res.status(200).json({
+            success: true,
+            data: stock,
+        })
+    }).catch(err => console.log(err))
+    //.sort({ createdAt: 'desc' })
+}
+getAllMenStock = async (req, res) => {
+    await GlamUp.find({gender:'Male'}, (err, stock) => {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -87,6 +107,6 @@ getAllWomenStock = async (req, res) => {
     //.sort({ createdAt: 'desc' })
 }
 module.exports = {
-    // createStock,
     getAllWomenStock,
+    getAllMenStock,
 }

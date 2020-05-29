@@ -71,7 +71,7 @@ export default class CreateStock extends Component {
     render() {
         const { category, gender, item_name, sizes, price, colors, imgCollection } = this.state;
         return (
-            <div>
+            <div className='admin'>
                 <h4>CREATE STOCK</h4>
                 <form className='row col-lg-12' method="post" encType="multipart/form-data" action="http://localhost:3000/api/stock">
                     <div className='col-md-6'>

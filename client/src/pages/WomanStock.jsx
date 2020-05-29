@@ -38,7 +38,9 @@ class WomanStock extends Component {
           return (
             <div className='img' key={i}>
               <div id='card'>
-                <img src={imgCollection.imgCollection} className='imgPreview' alt="WomenStock" />
+                <img src={imgCollection.imgCollection} className='imgPreview' alt="WomenStock" /><br/>
+              <span className='imgHeading'>{imgCollection.item_name}</span><br/>
+              <span><i className="fa fa-inr" aria-hidden="true"></i> {imgCollection.price}</span>
               </div>
             </div>
           )

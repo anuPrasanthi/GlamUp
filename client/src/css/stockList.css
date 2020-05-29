@@ -3,8 +3,18 @@ img{
     width: 150px;
     height: 150px;
     border-radius: 10px;
+    margin: 0 40px 15px 0;
    
 }
-/* .img{
-    margin: 0 25px 25px 0;
-} */
+.Container-fluid{
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 11px;
+    width: 1346px;
+    padding-top: 160px;
+    height: 221px;
+}
+.imgHeading{
+    text-transform: uppercase;
+    text-align: center;
+}

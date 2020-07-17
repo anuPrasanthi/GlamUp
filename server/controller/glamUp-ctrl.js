@@ -106,7 +106,51 @@ getAllMenStock = async (req, res) => {
     }).catch(err => console.log(err))
     //.sort({ createdAt: 'desc' })
 }
+getAllKidsStock = async (req, res) => {
+    await GlamUp.find({gender:'Kids'}, (err, stock) => {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                error: err,
+            })
+        }
+        if (!stock.length) {
+            return res.status(404).json({
+                success: false,
+                error: `Stock not found`,
+            })
+        }
+        
+        return res.status(200).json({
+            success: true,
+            data: stock,
+        })
+    }).catch(err => console.log(err))
+    //.sort({ createdAt: 'desc' })
+}
+getStockById = async (req, res) => {
+    await GlamUp.findOne({ _id: req.params.id}, (err, stock) => {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                error: err,
+            })
+        }
+        if (!stock) {
+            return res.status(404).json({
+                success: false,
+                message: 'Stock not found'
+            })
+        }
+        return res.status(200).json({
+            success: true,
+            data: stock,
+        })
+    }).catch(err => console.log(err))
+}
 module.exports = {
     getAllWomenStock,
     getAllMenStock,
+    getAllKidsStock,
+    getStockById,
 }

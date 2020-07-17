@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import '../css/stockList.css'
 const API_URL = 'http://localhost:3000/api';
 
@@ -31,23 +32,23 @@ class WomanStock extends Component {
     if (isLoading) {
       return <p>Loading ...</p>;
     }
-    //console.log(imgCollection)
+    
     return (
-      <div className="Container-fluid row col-xs-12">
-        {imgCollection.map((imgCollection, i) => {
-          return (
+      <div className="Container-fluid row images col-xs-12">
+        {imgCollection.map((imgCollection, i) => (
             <div className='img' key={i}>
               <div id='card'>
-                <img src={imgCollection.imgCollection} className='imgPreview' alt="WomenStock" /><br/>
-              <span className='imgHeading'>{imgCollection.item_name}</span><br/>
-              <span><i className="fa fa-inr" aria-hidden="true"></i> {imgCollection.price}</span>
+                {/* <Link to='/en/specifiedStock/?id='>  /en/specifiedStock/:id */}
+                <Link to={{pathname:`/en/specifiedStock/${imgCollection._id}`}}>
+                <img src={imgCollection.imgCollection[0]} data-id={imgCollection._id} className='imgPreview' alt="WomenStock" /><br />
+                </Link>
+                <span className='imgHeading'>{imgCollection.item_name}</span><br />
+                <span> {imgCollection.price}</span>
               </div>
             </div>
-          )
-        })}
+          ))}
       </div>
     )
-
   }
 }
 export default WomanStock

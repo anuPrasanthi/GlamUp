@@ -30,6 +30,7 @@ var upload = multer({
 let GlamUp = require('../models/glamUp-model')
 router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
     const files = req.files
+   
     if (!files) {
         const error = new Error('Please choose files')
         error.httpStatusCode = 400
@@ -43,6 +44,7 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
         reqFiles.push(url + '/public/' + files[i].filename)
 
     }
+    
     const body = req.body
     if (!body) {
         return res.status(400).json({
@@ -50,13 +52,23 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
             error: 'You must provide a stock',
         })
     }
+    
+    const Stringsizes = body.checkedSizes
+    console.log(Stringsizes+'=========0')
+    var checkedSizes = Stringsizes.split(",")
+    console.log(checkedSizes+'=========1')
+    const sizes =[]
+    for (var i=0; i <checkedSizes.length;i++){
+        sizes.push(checkedSizes[i])
+    }
+    console.log(sizes+'=========2')
     const stock = new GlamUp({
         _id: new mongoose.Types.ObjectId(),
         category: body.category,
         gender: body.gender,
         item_name: body.item_name,
         price: body.price,
-        // sizes: body.sizes,
+         sizes: sizes,
         colors: body.colors,
         imgCollection: reqFiles
     })
@@ -94,4 +106,6 @@ router.post('/stock', upload.array('imgCollection', 4), (req, res, next) => {
 })
 router.get('/allWomenStock', GlamUpCtrl.getAllWomenStock)
 router.get('/allMenStock', GlamUpCtrl.getAllMenStock)
+router.get('/allKidsStock', GlamUpCtrl.getAllKidsStock)
+router.get('/getStockById/:id', GlamUpCtrl.getStockById)
 module.exports = router

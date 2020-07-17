@@ -4,8 +4,8 @@ html *
   font-family: Neue-Helvetica,Arial,Sans-Serif;
    
 }
-body{
-  overflow: hidden;
+.each-slide{
+   overflow: hidden; 
 }
 .style_img{
     height: 100px;
@@ -21,6 +21,10 @@ body{
     background-size: cover;
     /* padding: 0 0 500px 0; */
     height: 700px;
+  }
+  .links{
+    border:1px solid black;
+    margin: 15px 15px 15px 15px !important;
   }
   .each-slide .woman {
     padding: 200px 20px 20px 500px;
@@ -49,7 +53,7 @@ body{
   /* .each-slide span button: */
 .navSearcgStyle{
     color: black;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-stretch: condensed;
     position: absolute; 
     right:500px;

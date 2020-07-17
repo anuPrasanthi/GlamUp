@@ -1,7 +1,7 @@
 import React from 'react'
 import { Slide } from 'react-slideshow-image'
-import styled from 'styled-components'
 import NavBar from '../components/NavBar'
+import {Link} from 'react-router-dom'
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import '../css/style.css'
 
@@ -22,13 +22,6 @@ const properties = {
     console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   }
 }
-const ViewButton = styled.a.attrs({
-  className: `btn btn-default`,
-})`
-border:1px solid black;
-margin: 15px 15px 15px 5px;
-`
-
 class ImageSlider extends React.Component {
   render() {
     return (
@@ -43,7 +36,7 @@ class ImageSlider extends React.Component {
               </div>
                 {/* <button className='btn btn-default' onClick={() => history.push('/in/woman')}>View</button> */}
                 {/* <Link to='/in/woman'>View</Link> */}
-                <ViewButton href={'/woman-studio'}>View</ViewButton>
+                <Link className= 'btn btn-default links' to='/woman-studio'>View</Link>
               </span>
             </div>
           </div>
@@ -54,7 +47,7 @@ class ImageSlider extends React.Component {
                 season curated for you.<br />
                 Spring Summer Man Collection
               </div>
-              <ViewButton href={'/men-studio'}>View</ViewButton>
+              <Link className= 'btn btn-default links' to='/men-studio'>View</Link>
               </span>
             </div>
           </div>
@@ -63,7 +56,7 @@ class ImageSlider extends React.Component {
               <span className='child'><h1>NEW IN BABY</h1>
                 <div className='sub-title'>Discover the latest essentials collection for baby with spring colors and new shapes.
               </div>
-              <ViewButton href={'/in/woman'}>View</ViewButton>
+              <Link className= 'btn btn-default links' to='/men-studio'>View</Link>
               </span>
             </div>
           </div>

@@ -1,17 +1,4 @@
 
-/* .close>ul.sideBarList>li {
-  background: white;
-   height: 100%;
-  width: 250px;
-   position: fixed;
-  top: 0;
-  left: 0;
-  transition: left .7s;
-  padding: 100px 141px 0px 0px;
-  font-size: 40px;
-margin-Bottom:0;
-  overflow: hidden;
-} */
 .fa-bars{
   position: absolute;
   top: 55px;
@@ -47,9 +34,20 @@ ul.sideBarList>li:hover{
 }
 ul>li.sideBarInfo{
   font-size: 15px;
-  padding: 150px 200px 0 0;
+  padding: 150px 42px 0 0;
     font-weight: 400;
-}
-/* li.sideBarInfo>a{
+    cursor: pointer;
+    margin-bottom: 15px;
 
-} */
+}
+ul.infoList>li{
+  height: 35px;
+
+}
+ul.infoList>li>a{
+  font-size: 13px;
+  color: black;
+  font-weight: 400;
+  padding: 0 80px 0 0;
+  margin-top: 10px;
+}

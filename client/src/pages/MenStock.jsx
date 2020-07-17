@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../css/stockList.css'
@@ -33,12 +34,14 @@ class MenStock extends Component {
     }
     //console.log(imgCollection)
     return (
-      <div className="Container-fluid row col-xs-12">
+      <div className="Container-fluid row images col-xs-12">
         {imgCollection.map((imgCollection, i) => {
           return (
-            <div key={i}>
+            <div className='img' key={i}>
               <div id='card'>
-                <img src={imgCollection.imgCollection} className='imgPreview' alt="WomenStock" />
+                <img src={imgCollection.imgCollection} className='imgPreview' alt="WomenStock" /><br />
+                <span className='imgHeading'>{imgCollection.item_name}</span><br />
+                <span> {imgCollection.price}</span>
               </div>
             </div>
           )

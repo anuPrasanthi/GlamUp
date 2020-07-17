@@ -21,14 +21,13 @@ class Links extends Component {
                 <Collapse>
                     <List>
                         <Item>
-                            <Link to='/' className='navbar-brand navSearcgStyle'>SEARCH<span className='search-box'>   ___________</span></Link>
+                            <Link to='/en/search' className='navbar-brand navSearcgStyle'>SEARCH<span className='search-box'>   ___________</span></Link>
                         </Item>
                     </List>
                 </Collapse>
                 <ul>
-                    <li><a href='/create/stock'>Create</a></li>
-                    <li><a href='/#' className='navbar-brand navLOginStyle'>LOG IN</a></li>
-                    <li><span className='navbar-brand fa fa-shopping-cart'></span></li>
+                    <li><Link to='/en/logon' className='navbar-brand navLOginStyle'>LOG IN</Link></li>
+        <li><Link to='/en/shop/cart' className='navbar-brand fa fa-shopping-cart'></Link></li>
                 </ul>
             </React.Fragment>
         )

@@ -7,8 +7,8 @@ const GlamUp = new Schema(
         category: { type: String, require: true },
         gender: { type: String, require: true },
         item_name: { type: String, require: true },
-        price: { type: Number, require: true },
-        sizes: { type: String, require: true },
+        price: { type: String, require: true },
+        sizes: { type: Array, require: true },
         colors: { type: String },
         imgCollection: { type: Array }
     },
